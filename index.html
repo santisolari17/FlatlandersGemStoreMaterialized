@@ -23,12 +23,12 @@
 				<md-list-item>
 					<md-input-container flex>
 						<label>Search gem</label>
-						<input type="text"></input>
+						<input type="text" ng-model="gemFilter"></input>
 						<md-icon aria-label="right" class="material-icons">search</md-icon>
 					</md-input-container>
 				</md-list-item>
 
-				<md-list-item ng-repeat="productRow in store.products">
+				<md-list-item ng-repeat="productRow in store.products | filter: gemFilter">
 					<md-button ng-click="store.select(productRow);store.toggleSideNav()" layout-fill style="text-align:left">
 						<!--<md-icon aria-label="right" class="material-icons">chevron_right</md-icon> -->
 						<md-icon md-svg-src="app/images/cubeitem.svg" class="avatar"></md-icon>
